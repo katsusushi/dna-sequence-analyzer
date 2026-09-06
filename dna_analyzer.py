@@ -109,7 +109,7 @@ def plot_nucleotide_counts(counts):
     plt.bar(counts.keys(), counts.values())
     plt.xlabel("Nucleotide")
     plt.ylabel("Count")
-    plt.title("Nucleotide Count: ")
+    plt.title("Nucleotide Frequency")
     plt.savefig("static/chart.png")
     plt.close()
 
