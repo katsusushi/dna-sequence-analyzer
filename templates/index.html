@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head
+    
+    <title> DNA Sequence Analyzer</title>
+
+</head>
+
+<body>
+    
+    <h1> DNA Sequence Analyzer</h1>
+
+    <form method="POST">
+
+        <label>
+            <input type="radio" name="seq_type" value="dna" {% if seq_type == "dna" %}checked{% endif %}> DNA
+        </label>
+        <label>
+            <input type="radio" name="seq_type" value="protein" {% if seq_type == "protein" %}checked{% endif %}> Protein
+        </label>
+
+        <br><br>
+
+        <textarea name="sequence" rows="4" cols="50" placeholder="Paste your DNA sequnce here"></textarea>
+        <br>
+        <button type="submit">Analyze</button>
+
+    </form>
+
+    {% if result %}
+
+        <h2>Result</h2>
+        <pre>{{ result }}</pre>
+
+        {% if seq_type == "dna" %}
+            <h2>Nucleotide Frequency Chart</h2>
+            <img src="{{ url_for('static', filename='chart.png') }}?v={{ range(1, 10000) | random }}">
+        {% endif %}
+
+    {% endif %}
+
+</body>
+</html>
