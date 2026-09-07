@@ -4,7 +4,6 @@ A full-stack Python/Flask web application for analyzing DNA and protein sequence
 
 **Live demo:** https://katsusushi.pythonanywhere.com
 
-___
 
 ## Why I built this
 
