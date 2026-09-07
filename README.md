@@ -2,7 +2,8 @@
 
 A full-stack Python/Flask web application for analyzing DNA and protein sequences, from basic composition statistics to fetching real genes from NCBI, running the full central dogma pipeline, and visualizing results, all through a live web interface.
 
-## Live demo: https://katsusushi.pythonanywhere.com
+**Live demo:** https://katsusushi.pythonanywhere.com
+
 
 ## Why I built this
 
