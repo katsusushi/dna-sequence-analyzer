@@ -1,23 +1,37 @@
 # DNA Sequence Analyzer
 
-A Python tool that analyzes DNA sequences, from basic composition statistics to fetching and processing real genes from NCBI's public database.
+A full-stack Python/Flask web application for analyzing DNA and protein sequences, from basic composition statistics to fetching real genes from NCBI, running the full central dogma pipeline, and visualizing results, all through a live web interface.
+
+## Live demo: https://katsusushi.pythonanywhere.com
 
 ## Why I built this
 
-I am a student currently in grade 11 aiming for a future career in bioinformatics, and this was my first project combining both, biology and programming. I wanted to build something that really put me up to the test, challenged me and actually mirrored the real DNA → RNA → Protein Pipeline (central dogma of molecular biology) using in real bioinformatics work.
+I am a student currently in grade 11 aiming for a future career in bioinformatics, and this was my first project combining both, biology and programming. I wanted to build something that really put me up to the test, challenged me and actually mirrored the real DNA → RNA → Protein Pipeline (central dogma of molecular biology) using in real bioinformatics work and eventually make it publicly accessible to anyone with a internet.
 
 ## Features
 
-- **Sequence cleaning & validation** - normalizes input and checks for valid DNA bases (A, T, G, C)
-- **Nucleotide counting** - counts occurrences of each base
-- **GC content calculation** - a measure of DNA stability, commonly used in molecular biology
-- **Reverse complement generation** - models the antiparallel double-strand structure of DNA
-- **Transcription** - converts DNA to RNA (T → U)
-- **Translation** - converts RNA to a protein sequence using a full 64-codon lookup table, including stop-codon handling
-- **Multiple reading frame translation** - translates a sequence starting from all 3 possible reading frames
-- **FASTA file parsing** - reads standard-format `.fasta` sequence files, including multi-line sequences
-- **Live NCBI integration** - fetches real gene sequences directly from NCBI's GenBank database using Biopython's Entrez module
-- **Visualization** - generates a bar chart of nucleotide frequency using matplotlib
+**Core DNA analysis**
+- Sequence cleaning & validation (A, T, G, C).
+- Nucleotide counting and GC content calculation.
+- Reverse complement generation, modeling DNA's antiparallel double-strand structure.
+- Transcription (DNA → RNA) and translation (RNA → protein) using a full 64-codon lookup table with stop-codon handling.
+- 6-frame translation, all 3 forward reading frames plus all 3 reverse-complement frames.
+
+**Protein analysis**
+- Amino acid sequence validation against the 20 standard single letter codes.
+- Amino acid frequency counting.
+- A built-in warning if a "protein" input only contains letters that overlap with DNA bases (A/T/G/C), since the two alphabets partially overlap.
+
+**Data & file handling**
+- FASTA file parsing, including multi-line sequences.
+- Live NCBI GenBank integration via Biopython's Entrez module, fetch and analyze real gene sequences directly.
+
+**Visualization**
+- Live-generated bar charts (nucleotide or amino acid frequency) using matplotlib, regenerated fresh for every submission.
+
+**Web interface**
+- A Flask-powered web app: paste a sequence, choose DNA or Protein, and get a full formatted report plus chart, all in the browser
+Deployed and publicly accessible
 
 ## Example output
 
