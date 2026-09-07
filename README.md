@@ -91,7 +91,7 @@ python3 app.py
 Then open `http://127.0.0.1:5000` in your browser.
 
 **Or use the code directly in Python**
-```
+```python
 from dna_analyzer import analyze, analyze_protein, six_frame_translation
 
 print(analyze("ATGGCCATTGTAATGGGCCGCTGA"))
