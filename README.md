@@ -76,12 +76,33 @@ To analyze your own sequence, edit the `if __name__ == "__main__":` block at the
 analyze("ATGGCCATTGTAATGGGCCGCTGA")
 ```
 
+## How to run it locally
+
+**Requirements**
+```
+pip3 install -r requirements.txt
+```
+
+**Run the web app**
+```
+python3 app.py
+```
+Then open `http://127.0.0.1:5000` in your browser.
+
+**Or use the code directly in Python**
+```
+from dna_analyzer import analyze, analyze_protein, six_frame_translation
+
+print(analyze("ATGGCCATTGTAATGGGCCGCTGA"))
+print(analyze_protein("MAIVMGR"))
+print(six_frame_translation("ATGGCCATTGTAATGGGCCGCTGA"))
+```
+
 ## What I learned
 
 This project helped me gain some real knowledge and taught me through a lot of trial and errors, like the full pipeline of real bioinformatics work and not just writing code, rather debugging real world issues like the SSL certificate errors when connecting to NCBI, handling incomplete condons at sequence boundaries, and structuring a growing codebase cleanly and neatly. It also especially deepened my understanding of both molecular biology fundamentals and practical Python programming.
 
 ## Next steps
 
-- 6-frame translation (including the reverse complement strand)
-- Support for protein/amino acid sequence input
-- A simple web interface
+- Support for comparative sequence alignment across species
+- A second portfolio project in a different bioinformatics domain (protein structure or ML on genomic data)
